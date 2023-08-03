@@ -13,7 +13,7 @@ router.route("/").post(async (req, res) => {
         password: req.body.password,
       }
     );
-    console.log(resp.data);
+    console.log(resp);
     res.json(resp.data);
   } catch (error) {
     console.log(error);

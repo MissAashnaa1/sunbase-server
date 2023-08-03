@@ -20,6 +20,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // routing
+app.get("/",(req,res)=>{
+  res.json({msg:"testing"})
+})
 app.use("/login", loginRoute);
 
 app.get("*", (req, res) => {
