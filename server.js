@@ -17,6 +17,7 @@ const port = process.env.PORT || 5000;
 const loginRoute = require("./routes/login");
 const getAllCustomerRoute = require("./routes/getAllCustomersRoute");
 const createCustomerRoute = require("./routes/createCustomerRoute");
+const deleteCustomerRoute = require("./routes/deleteCustomerRoute");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 app.use("/login", loginRoute);
 app.use("/get-customers/", getAllCustomerRoute);
 app.use("/create-customer/", createCustomerRoute);
+app.use("/delete-customer/", deleteCustomerRoute);
 
 app.get("*", (req, res) => {
   res.send("404");
