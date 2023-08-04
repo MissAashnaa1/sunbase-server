@@ -6,15 +6,15 @@ router.route("/").post(async (req, res) => {
   // console.log(req.body, "update cust route");
 
   const axios = require("axios");
-  let data = JSON.stringify({
-    first_name: "Jane",
-    last_name: "Doe",
-    street: "Elvnu Street",
-    address: "H no 2 ",
-    city: "Delhi",
-    state: "Delhi",
-    email: "sam@gmail.com",
-    phone: "12345678",
+ let data = JSON.stringify({
+    first_name: req.body.fName,
+    last_name: req.body.lName,
+    street: req.body.street,
+    address: req.body.address,
+    city: req.body.city,
+    state: req.body.state,
+    email: req.body.email,
+    phone: req.body.phone,
   });
 
   let config = {
