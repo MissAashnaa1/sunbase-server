@@ -18,6 +18,7 @@ const loginRoute = require("./routes/login");
 const getAllCustomerRoute = require("./routes/getAllCustomersRoute");
 const createCustomerRoute = require("./routes/createCustomerRoute");
 const deleteCustomerRoute = require("./routes/deleteCustomerRoute");
+const updateCustomerRoute = require("./routes/updateCustomerRoute");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -30,6 +31,7 @@ app.use("/login", loginRoute);
 app.use("/get-customers/", getAllCustomerRoute);
 app.use("/create-customer/", createCustomerRoute);
 app.use("/delete-customer/", deleteCustomerRoute);
+app.use("/update-customer", updateCustomerRoute);
 
 app.get("*", (req, res) => {
   res.send("404");
