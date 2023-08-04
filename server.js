@@ -15,15 +15,19 @@ const port = process.env.PORT || 5000;
 
 // routes
 const loginRoute = require("./routes/login");
+const getAllCustomerRoute = require("./routes/getAllCustomersRoute");
+const createCustomerRoute = require("./routes/createCustomerRoute");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // routing
-app.get("/",(req,res)=>{
-  res.json({msg:"testing"})
-})
+app.get("/", (req, res) => {
+  res.json({ msg: "testing" });
+});
 app.use("/login", loginRoute);
+app.use("/get-customers/", getAllCustomerRoute);
+app.use("/create-customer/", createCustomerRoute);
 
 app.get("*", (req, res) => {
   res.send("404");
